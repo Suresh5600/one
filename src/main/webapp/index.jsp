@@ -9,13 +9,13 @@
 	<h1 style="color: pink; font-size: 40px;" align="center">WE ARE SUCCESSFULLY DEPLOYED APPLICATION</h1>
 	<h1 style="color: grey; font-size: 40px;" align="center">we are done with ci/cd</h1>
     <h1 style="color: grey; font-size: 40px;" align="center">Nenu kuda Deploy Chesaanu</h1>
-<<<<<<< HEAD
+
     <h1 style="color: grey; font-size: 40px;" align="center">Hi brother</h1>
     <h1 style="color: grey; font-size: 40px;" align="center">keep loving more</h1>
-=======
-    <h1 style="color: grey; font-size: 40px;" align="center">Hi brother ela unnaaru</h1>
 
->>>>>>> 5b66cad97294edb4546177386178bfd52bd446f9
+   
+
+
 
 
 
