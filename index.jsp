@@ -1,21 +1,20 @@
 <html>
 <head>
-<title>Addition Program</title>
+
 </head>
 <body>
-<h1>Addition of Two Numbers</h1>
+	<h1 style="color: violet; font-size: 40px;" align="center">HEY WE DEPLOYED OUR APP USING JENKINS</h1>
+	<h1 style="color: red; font-size: 40px;" align="center">THIS IS APP DEPLOYMENT USING TOMCAT</h1>
+	<h1 style="color: green; font-size: 40px;" align="center">234567890</h1>
+	<h1 style="color: pink; font-size: 40px;" align="center">WE ARE SUCCESSFULLY DEPLOYED APPLICATION</h1>
+	<h1 style="color: grey; font-size: 40px;" align="center">we are done with ci/cd</h1>
+    <h1 style="color: grey; font-size: 40px;" align="center">Nenu kuda Deploy Chesaanu</h1>
+    <h1 style="color: grey; font-size: 40px;" align="center">Hi brother</h1>
 
-<%
-Process p = Runtime.getRuntime().exec("/var/lib/jenkins/workspace/addition-app/add");
-java.io.BufferedReader reader =
-new java.io.BufferedReader(
-new java.io.InputStreamReader(p.getInputStream()));
 
-String line;
-while((line = reader.readLine()) != null){
-    out.println("<h2>" + line + "</h2>");
-}
-%>
 
-</body>
-</html>
+
+
+
+ </body>
+ </html>
