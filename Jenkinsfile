@@ -23,7 +23,7 @@ pipeline {
         stage('Deploy to Tomcat') {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
-                    sshagent(credentials: ['pipeline']) {
+                    sshagent(['pipe']) {
                         sh '''
                             scp -o StrictHostKeyChecking=no \
                             target/*.war \
