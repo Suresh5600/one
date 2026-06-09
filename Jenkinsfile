@@ -27,7 +27,7 @@ pipeline {
                         sh '''
                             scp -o StrictHostKeyChecking=no \
                             target/*.war \
-                            root@184.73.59.11:/root/apache-tomcat-9.0.118/webapps/surya/
+                            root@184.73.59.11:/root/apache-tomcat-9.0.118/webapps/
                         '''
                     }
                 }
