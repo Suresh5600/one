@@ -7,7 +7,7 @@ pipeline {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
                     deleteDir()
-                    git 'https://github.com/Suresh5600/one.git'
+                    
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
 
         stage('Deploy to Tomcat') {
             steps {
-                sshagent(['creds']) {
+                sshagent(['secret'])  {
                     sh '''
                         scp -o StrictHostKeyChecking=no \
                         target/*.war \
