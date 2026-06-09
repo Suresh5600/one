@@ -7,7 +7,7 @@ pipeline {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
                     deleteDir()
-                   git 'https://github.com/Suresh5600/one.git' 
+                    
                 }
             }
         }
