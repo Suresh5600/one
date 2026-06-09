@@ -7,6 +7,11 @@ pipeline {
                 git 'https://github.com/Suresh5600/one.git'
             }
         }
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
         stage('code-build') {
             environment {
                myvalue = "$suresh"
