@@ -32,8 +32,8 @@ pipeline {
                     sshagent(['pipe']) {
                         sh '''
                             scp -o StrictHostKeyChecking=no \
-                            target/suresh.war \
-                            root@184.73.59.11:/root/apache-tomcat-9.0.118/webapps/
+                            target/*.war
+                            root@184.73.59.11:/root/apache-tomcat-9.0.118/webapps/suresh.war
                         '''
                     }
                 }
