@@ -23,10 +23,16 @@ pipeline {
         stage('Deploy to Tomcat') {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
+                    //sshagent(['pipe']) {
+                      //  sh '''
+                       //     scp -o StrictHostKeyChecking=no \
+                       //     target/*.war \
+                        //    root@184.73.59.11:/root/apache-tomcat-9.0.118/webapps/
+                      //  '''
                     sshagent(['pipe']) {
                         sh '''
                             scp -o StrictHostKeyChecking=no \
-                            target/*.war \
+                            target/suresh.war \
                             root@184.73.59.11:/root/apache-tomcat-9.0.118/webapps/
                         '''
                     }
