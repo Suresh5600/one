@@ -22,7 +22,7 @@ pipeline {
 
         stage('Deploy to Tomcat') {
             steps {
-                sshagent(['secret']) {
+                sshagent(['pipeline']) {
                     sh '''
                         scp -o StrictHostKeyChecking=no \
                         target/*.war \
