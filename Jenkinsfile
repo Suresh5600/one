@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage('code-checkout') {
+        stage('Code Checkout') {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
                     deleteDir()
@@ -12,7 +12,7 @@ pipeline {
             }
         }
 
-        stage('code-build') {
+        stage('Code Build') {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
                     sh 'mvn clean package -DskipTests'
@@ -22,12 +22,14 @@ pipeline {
 
         stage('Deploy to Tomcat') {
             steps {
-                sshagent(['pipeline']) {
-                    sh '''
-                        scp -o StrictHostKeyChecking=no \
-                        target/*.war \
-                        root@184.73.59.11:/root/apache-tomcat-9.0.118/webapps/
-                    '''
+                timeout(time: 5, unit: 'MINUTES') {
+                    sshagent(credentials: ['pipeline']) {
+                        sh '''
+                            scp -o StrictHostKeyChecking=no \
+                            target/*.war \
+                            root@184.73.59.11:/root/apache-tomcat-9.0.118/webapps/
+                        '''
+                    }
                 }
             }
         }
