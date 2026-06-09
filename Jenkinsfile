@@ -1,37 +1,34 @@
 pipeline {
     agent any
 
-   stages {
-        stage('Helloooo') {
+    stages {
+
+        stage('code-checkout') {
             steps {
-                echo 'Hello World'
+                timeout(time: 5, unit: 'MINUTES') {
+                    deleteDir()
+                    git 'https://github.com/Suresh5600/one.git'
+                }
             }
         }
-      //  stage('code-checkout') {
-        //    steps {
-         //       git 'https://github.com/Suresh5600/one.git'
-          //  }
-  // }
-        
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
+
         stage('code-build') {
-            environment {
-               myvalue = "$suresh"
-            }
             steps {
-                echo "calling x value $suresh"
+                timeout(time: 5, unit: 'MINUTES') {
+                    sh 'mvn clean package -DskipTests'
+                }
             }
         }
-        stage('code-deploy') {
-            input {
-                message "can i deploy the code"
-            }
+
+        stage('Deploy to Tomcat') {
             steps {
-                echo 'deploying my code'
+                sshagent(['secret']) {
+                    sh '''
+                        scp -o StrictHostKeyChecking=no \
+                        target/*.war \
+                        root@184.73.59.11:/root/apache-tomcat-9.0.118/webapps/
+                    '''
+                }
             }
         }
     }
