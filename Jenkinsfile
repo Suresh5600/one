@@ -21,11 +21,13 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('sonar') {
-                    sh 'mvn sonar:sonar'
-                }
-            }
-        }
+                timeout(time: 5, unit: 'MINUTES') {
+                    withSonarQubeEnv('sonar') {
+                        sh 'mvn sonar:sonar'
+                  }
+              }
+           }
+       }
 
         stage('Deploy to Tomcat') {
             steps {
