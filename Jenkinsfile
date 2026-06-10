@@ -20,18 +20,10 @@ pipeline {
             }
         }
 
-       // stage('SonarQube Analysis') {
-          //  steps {
-            //    withSonarQubeEnv('sonar') {
-             //       sh 'mvn sonar:sonar'
-              //  }
-           // }
-       // }
-
         stage('Deploy to Tomcat') {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
-                    sshagent(['pipe']) {
+                    sshagent(credentials: ['pipeline']) {
                         sh '''
                             scp -o StrictHostKeyChecking=no \
                             target/*.war \
