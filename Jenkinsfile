@@ -20,6 +20,13 @@ pipeline {
             }
         }
 
+        stage("Test") {
+             withSonarQubeEnv("sonar") {
+                    sh "mvn sonar:sonar"
+          }
+       }
+                
+
         stage('Deploy to Tomcat') {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
