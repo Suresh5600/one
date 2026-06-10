@@ -1,10 +1,10 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'MAVEN_HOME'    // optional: define Maven tool from Jenkins global config
-        jdk 'JDK_HOME'        // optional: define JDK tool from Jenkins global config
-    }
+   // tools {
+     //   maven 'MAVEN_HOME'    // optional: define Maven tool from Jenkins global config
+       // jdk 'JDK_HOME'        // optional: define JDK tool from Jenkins global config
+    //}
 
     stages {
 
