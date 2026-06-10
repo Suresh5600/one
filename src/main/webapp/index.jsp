@@ -1,122 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Facebook Login</title>
+    <title>SBI ATM Home Page</title>
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            background-color: #e6f2ff;
+            text-align: center;
         }
 
         .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .left {
-            width: 500px;
-            margin-right: 50px;
-        }
-
-        .left h1 {
-            color: #1877f2;
-            font-size: 60px;
-            margin-bottom: 10px;
-        }
-
-        .left p {
-            font-size: 28px;
-        }
-
-        .login-box {
             width: 400px;
-            background: white;
+            margin: 50px auto;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            background-color: white;
+            border: 2px solid #003366;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
         }
 
-        .login-box input {
-            width: 100%;
-            padding: 14px;
-            margin: 8px 0;
-            border: 1px solid #dddfe2;
-            border-radius: 6px;
-            font-size: 17px;
-            box-sizing: border-box;
+        h1 {
+            color: #003366;
         }
 
-        .login-btn {
-            width: 100%;
-            background: #1877f2;
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            background-color: #003366;
             color: white;
+            padding: 10px 20px;
             border: none;
-            padding: 14px;
-            font-size: 20px;
-            border-radius: 6px;
             cursor: pointer;
         }
 
-        .forgot {
-            text-align: center;
-            margin: 15px 0;
+        button:hover {
+            background-color: #0055aa;
         }
 
-        .forgot a {
-            color: #1877f2;
-            text-decoration: none;
-        }
-
-        hr {
-            margin: 20px 0;
-        }
-
-        .create-btn {
-            display: block;
-            width: 60%;
-            margin: auto;
-            background: #42b72a;
-            color: white;
-            border: none;
-            padding: 14px;
-            font-size: 17px;
-            border-radius: 6px;
-            cursor: pointer;
+        .footer {
+            margin-top: 20px;
+            color: gray;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+    <div class="container">
+        <h1>State Bank of India</h1>
+        <h2>ATM Banking Portal</h2>
 
-    <div class="left">
-        <h1>facebook</h1>
-        <p>Facebook helps you connect and share with the people in your life.</p>
-    </div>
-
-    <div class="login-box">
         <form>
-            <input type="text" placeholder="Email address or phone number" required>
-            <input type="password" placeholder="Password" required>
+            <input type="text" placeholder="Enter Card Number" required><br>
+            <input type="password" placeholder="Enter PIN" required><br>
 
-            <button type="submit" class="login-btn">Log In</button>
-
-            <div class="forgot">
-                <a href="#">Forgotten password?</a>
-            </div>
-
-            <hr>
-
-            <button type="button" class="create-btn">
-                Create New Account
-            </button>
+            <button type="submit">Login</button>
         </form>
-    </div>
 
-</div>
+        <div class="footer">
+            <p>Welcome to SBI ATM Services</p>
+            <p>Secure Banking for Everyone</p>
+        </div>
+    </div>
 
 </body>
 </html>
