@@ -19,6 +19,13 @@ pipeline {
                 }
             }
         }
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonar') {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
 
         stage('Deploy to Tomcat') {
             steps {
