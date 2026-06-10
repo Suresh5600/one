@@ -1,18 +1,13 @@
 pipeline {
     agent any
 
-   // tools {
-     //   maven 'MAVEN_HOME'    // optional: define Maven tool from Jenkins global config
-       // jdk 'JDK_HOME'        // optional: define JDK tool from Jenkins global config
-    //}
-
     stages {
 
         stage('Code Checkout') {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
                     deleteDir()
-                    git url: '[github.com](https://github.com/Suresh5600/one.git)'
+                    git 'https://github.com/Suresh5600/one.git'
                 }
             }
         }
@@ -27,10 +22,8 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                timeout(time: 10, unit: 'MINUTES') {
-                    withSonarQubeEnv('sonar') {
-                        sh 'mvn sonar:sonar'
-                    }
+                withSonarQubeEnv('sonar') {
+                    sh 'mvn sonar:sonar'
                 }
             }
         }
