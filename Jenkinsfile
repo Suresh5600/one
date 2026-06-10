@@ -19,15 +19,16 @@ pipeline {
                 }
             }
         }
+
         stage('SonarQube Analysis') {
             steps {
                 timeout(time: 5, unit: 'MINUTES') {
                     withSonarQubeEnv('sonar') {
                         sh 'mvn sonar:sonar'
-                  }
-              }
-           }
-       }
+                    }
+                }
+            }
+        }
 
         stage('Deploy to Tomcat') {
             steps {
@@ -36,7 +37,7 @@ pipeline {
                         sh '''
                             scp -o StrictHostKeyChecking=no \
                             target/*.war \
-                            root@184.73.59.11:/root/apache-tomcat-9.0.118/webapps/
+                            root@184.73.59.11:/root/apache-tomcat-9.0.118/webapps/suresh.war
                         '''
                     }
                 }
