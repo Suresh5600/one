@@ -5,7 +5,7 @@ pipeline {
 
         stage('Code Checkout') {
             steps {
-                timeout(time: 5, unit: 'MINUTES') {
+                timeout(time: 15, unit: 'MINUTES') {
                     deleteDir()
                     git 'https://github.com/Suresh5600/one.git'
                 }
@@ -14,7 +14,7 @@ pipeline {
 
         stage('Code Build') {
             steps {
-                timeout(time: 5, unit: 'MINUTES') {
+                timeout(time: 15, unit: 'MINUTES') {
                     sh 'mvn clean package -DskipTests'
                 }
             }
@@ -22,7 +22,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                timeout(time: 5, unit: 'MINUTES') {
+                timeout(time: 15, unit: 'MINUTES') {
                     withSonarQubeEnv('sonar2') {
                         sh 'mvn sonar:sonar'
                     }
@@ -32,7 +32,7 @@ pipeline {
 
         stage('Deploy to Tomcat') {
             steps {
-                timeout(time: 5, unit: 'MINUTES') {
+                timeout(time: 15, unit: 'MINUTES') {
                     sshagent(['pipe']) {
                         sh '''
                             scp -o StrictHostKeyChecking=no \
