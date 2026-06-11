@@ -101,7 +101,7 @@
         </div>
 
         <div class="footer">
-            Thank You For Banking With SBI
+            Thank You For Banking With SBI pora pu** malli raamaaku
         </div>
 
     </div>
