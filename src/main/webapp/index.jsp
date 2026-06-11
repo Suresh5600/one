@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ATM Interface</title>
+    <title>SBI ATM Interface</title>
     <style>
         body {
-            background-color: #d9d9d9;
+            margin: 0;
+            padding: 0;
+            background: #cfcfcf;
             font-family: Arial, sans-serif;
         }
 
         .atm {
-            width: 700px;
+            width: 900px;
             margin: 30px auto;
             background: #444;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 0 20px #000;
         }
 
         .screen {
-            background: #e8f5e9;
-            height: 300px;
-            border: 5px solid #222;
-            border-radius: 10px;
+            background: #dfffe0;
+            border: 8px solid #222;
+            border-radius: 15px;
+            min-height: 450px;
             padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0047AB;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            color: #333;
         }
 
         .btn-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 15px;
+            margin-top: 40px;
         }
 
         .side-buttons {
@@ -38,14 +50,26 @@
         }
 
         button {
-            width: 120px;
-            height: 40px;
-            font-size: 14px;
+            width: 250px;
+            min-height: 50px;
+            border: none;
+            border-radius: 8px;
+            background: #0056d6;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
         }
 
-        h2 {
-            color: #0047AB;
+        button:hover {
+            background: #003d99;
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #444;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -53,25 +77,33 @@
 
 <div class="atm">
     <div class="screen">
-        <h2>STATE BANK OF INDIA ATM</h2>
-        <h3>Welcome</h3>
+
+        <h1>🏦 STATE BANK OF INDIA ATM</h1>
+        <h3>Welcome to SBI ATM Services</h3>
         <p>Please select your transaction</p>
 
         <div class="btn-container">
+
             <div class="side-buttons">
-                <button>Cash Withdrawal</button>
-                <button>Balance Enquiry</button>
-                <button>Mini Statement</button>
-                <button>Asalu nee card lo dabbulu unnaayaa</button>
-                <button>unte nannu chusthaaventi dabbulu theeskuni vellu</button>
+                <button>💰 Cash Withdrawal</button>
+                <button>📊 Balance Enquiry</button>
+                <button>📄 Mini Statement</button>
+                <button>😄 Asalu Nee Card Lo Dabbulu Unnaayaa?</button>
+                <button>😂 Unte Nannu Chusthaaventi, Dabbulu Theeskuni Vellu!</button>
             </div>
 
             <div class="side-buttons">
-                <button>Deposit</button>
-                <button>PIN Change</button>
-                <button>Exit</button>
+                <button>🏦 Deposit</button>
+                <button>🔑 PIN Change</button>
+                <button>❌ Exit</button>
             </div>
+
         </div>
+
+        <div class="footer">
+            Thank You For Banking With SBI
+        </div>
+
     </div>
 </div>
 
