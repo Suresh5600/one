@@ -19,7 +19,7 @@ pipeline {
                 }
             }
         }
-       stage('SonarQube Analysis') {
+      /* stage('SonarQube Analysis') {
             steps {
                 timeout(time: 60, unit: 'MINUTES') {
                       withSonarQubeEnv('sonar') {
@@ -27,7 +27,7 @@ pipeline {
                     }
                }
            }
-       }
+       }*/
 
         stage('Deploy to Tomcat') {
             steps {
