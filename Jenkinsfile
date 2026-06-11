@@ -19,16 +19,15 @@ pipeline {
                 }
             }
         }
-
-       stage('SonarQube Analysis') {
-           steps {
-        timeout(time: 60, unit: 'MINUTES') {
-            withSonarQubeEnv('sonar2') {
-                sh 'mvn clean verify sonar:sonar'
-                   }
-                }
-            }
-        }
+        stage('SonarQube Analysis') {
+            steps {
+                timeout(time: 60, unit: 'MINUTES') {
+                      withSonarQubeEnv('sonar') {
+                                  sh 'mvn clean verify sonar:sonar'
+                    }
+               }
+           }
+       }
 
         stage('Deploy to Tomcat') {
             steps {
