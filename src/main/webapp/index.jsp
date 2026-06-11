@@ -1,70 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SBI ATM Home Page</title>
+    <title>ATM Interface</title>
     <style>
         body {
+            background-color: #d9d9d9;
             font-family: Arial, sans-serif;
-            background-color: #e6f2ff;
+        }
+
+        .atm {
+            width: 700px;
+            margin: 30px auto;
+            background: #444;
+            padding: 20px;
+            border-radius: 15px;
             text-align: center;
         }
 
-        .container {
-            width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
-            border: 2px solid #003366;
+        .screen {
+            background: #e8f5e9;
+            height: 300px;
+            border: 5px solid #222;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px gray;
+            padding: 20px;
         }
 
-        h1 {
-            color: #003366;
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
         }
 
-        input {
-            width: 90%;
-            padding: 10px;
-            margin: 10px;
+        .side-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         button {
-            background-color: #003366;
-            color: white;
-            padding: 10px 20px;
-            border: none;
+            width: 120px;
+            height: 40px;
+            font-size: 14px;
             cursor: pointer;
         }
 
-        button:hover {
-            background-color: #0055aa;
-        }
-
-        .footer {
-            margin-top: 20px;
-            color: gray;
+        h2 {
+            color: #0047AB;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>State Bank of India</h1>
-        <h2>ATM Banking Portal</h2>
+<div class="atm">
+    <div class="screen">
+        <h2>STATE BANK OF INDIA ATM</h2>
+        <h3>Welcome</h3>
+        <p>Please select your transaction</p>
 
-        <form>
-            <input type="text" placeholder="Enter Card Number" required><br>
-            <input type="password" placeholder="Enter PIN" required><br>
+        <div class="btn-container">
+            <div class="side-buttons">
+                <button>Cash Withdrawal</button>
+                <button>Balance Enquiry</button>
+                <button>Mini Statement</button>
+            </div>
 
-            <button type="submit">Login</button>
-        </form>
-
-        <div class="footer">
-            <p>Welcome to SBI ATM Services</p>
-            <p>Secure Banking for Everyone</p>
+            <div class="side-buttons">
+                <button>Deposit</button>
+                <button>PIN Change</button>
+                <button>Exit</button>
+            </div>
         </div>
     </div>
+</div>
 
 </body>
 </html>
