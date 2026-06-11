@@ -62,6 +62,8 @@
                 <button>Cash Withdrawal</button>
                 <button>Balance Enquiry</button>
                 <button>Mini Statement</button>
+                <button>Asalu nee card lo dabbulu unnaayaa</button>
+                <button>unte nannu chusthaaventi dabbulu theeskuni vellu</button>
             </div>
 
             <div class="side-buttons">
